@@ -1,0 +1,12 @@
+[
+  {
+    "email": "admin@admin.co",
+    "password": "admin",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW5AYWRtaW4uY28iLCJwYXNzd29yZCI6ImFkbWluIn0.u9kgnXssaXF4CEXtYSMape2FJVK9SmGXghpaQ204kc0"
+  },
+  {
+    "email": "nisuro37@gmail.co",
+    "password": "admin",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibmlzdXJvMzdAZ21haWwuY28iLCJwYXNzd29yZCI6ImFkbWluIn0.NT_wfQdEBSqH_RTp7f2gIW-Y2iUxFMoIoe_7od2yta8"
+  }
+]
