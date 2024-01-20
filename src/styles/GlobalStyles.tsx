@@ -10,10 +10,22 @@ const CustomStyles = createGlobalStyle({
   },
 })
 
+const IcoMoon = createGlobalStyle`
+@font-face {
+   font-family: "icomoon";
+   src: url("/fonts/icomoon.eot");
+   src: url("/fonts/icomoon.eot?#iefix")
+   format("embedded-opentype"),
+   url("/fonts/icomoon.svg#icomoon") format("svg"),
+   url("/fonts/icomoon.woff") format("woff"),
+   url("/fonts/icomoon.ttf") format("truetype");
+};`
+
 const GlobalStyles = () => (
   <>
     <BaseStyles />
     <CustomStyles />
+    <IcoMoon />
   </>
 )
 

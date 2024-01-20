@@ -1,10 +1,17 @@
-import { ErrorMessage, Form, Label } from './InputField.styles'
+import {
+  ContainerInputField,
+  ErrorMessage,
+  Form,
+  Icon,
+  Label,
+} from './InputField.styles'
 
 interface InputFieldProps {
   label: string
   error?: string
-  type?: string
+  type: string
   placeholder?: string
+  icon?: string
   name?: string
   value?: string
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
@@ -15,6 +22,7 @@ const InputField = ({
   error,
   type,
   placeholder,
+  icon,
   name,
   value,
   onChange,
@@ -22,7 +30,11 @@ const InputField = ({
   return (
     <>
       <Label data-test={'label-form'}>{label}</Label>
-      <Form />
+      <ContainerInputField>
+        {icon && <Icon $icon={icon} />}
+        <Form placeholder={placeholder} type={type} />
+      </ContainerInputField>
+
       <ErrorMessage>{error}</ErrorMessage>
     </>
   )
