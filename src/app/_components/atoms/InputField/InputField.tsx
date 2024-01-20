@@ -11,10 +11,12 @@ interface InputFieldProps {
   error?: string
   type: string
   placeholder?: string
-  icon?: string
+  leftIcon?: string
+  rightIcon?: string
   name?: string
   value?: string
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  onClickRightIcon?: () => void
 }
 
 const InputField = ({
@@ -22,20 +24,36 @@ const InputField = ({
   error,
   type,
   placeholder,
-  icon,
+  leftIcon,
+  rightIcon,
   name,
   value,
   onChange,
-}: InputFieldProps) => {
+  onClickRightIcon,
+}: InputFieldProps) => {  
   return (
     <>
       <Label data-test={'label-form'}>{label}</Label>
       <ContainerInputField>
-        {icon && <Icon $icon={icon} />}
-        <Form placeholder={placeholder} type={type} />
+        {leftIcon && <Icon $icon={leftIcon} />}
+        <Form
+          placeholder={placeholder}
+          type={type}
+          value={value}
+          id={name}
+          name={name}
+          onChange={onChange}
+        />
+        {rightIcon && (
+          <Icon
+            $icon={rightIcon}
+            $clickeable={onClickRightIcon ? true : false}
+            onClick={onClickRightIcon}
+          />
+        )}
       </ContainerInputField>
 
-      <ErrorMessage>{error}</ErrorMessage>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </>
   )
 }
