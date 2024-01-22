@@ -108,6 +108,7 @@ const LoginForm = () => {
         error={formik.errors.password}
         value={formik.values.password}
         name={'password'}
+        idRightIcon="showPassword"
         onChange={formik.handleChange}
         onClickRightIcon={() => setShowPassword(!showPassword)}
         placeholder={PLACEHOLDER_PASSWORD}

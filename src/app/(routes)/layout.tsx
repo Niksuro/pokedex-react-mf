@@ -1,13 +1,13 @@
 import StyledComponentsRegistry from '@/lib/registry'
 import GlobalStyles from '@/styles/GlobalStyles'
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
+import { Rubik } from 'next/font/google'
 
-const roboto = Roboto({
+const rubik = Rubik({
   weight: ['400', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
-  variable: '--display-roboto',
+  variable: '--display-rubik',
 })
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={roboto.className}>
+    <html lang="en" className={rubik.className}>
       <body>
         <StyledComponentsRegistry>
           <GlobalStyles />

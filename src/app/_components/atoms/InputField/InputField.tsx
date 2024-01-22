@@ -15,6 +15,7 @@ interface InputFieldProps {
   rightIcon?: string
   name?: string
   value?: string
+  idRightIcon?: string
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
   onClickRightIcon?: () => void
 }
@@ -28,6 +29,7 @@ const InputField = ({
   rightIcon,
   name,
   value,
+  idRightIcon,
   onChange,
   onClickRightIcon,
 }: InputFieldProps) => {
@@ -46,6 +48,7 @@ const InputField = ({
         />
         {rightIcon && (
           <Icon
+            id={idRightIcon}
             icon={rightIcon}
             clickeable={onClickRightIcon ? true : false}
             onClick={onClickRightIcon}
