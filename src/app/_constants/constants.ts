@@ -18,6 +18,10 @@ export const LABEL_PASSWORD: string = 'Contraseña*'
 export const PLACEHOLDER_PASSWORD: string = 'Introduce tu contraseña'
 export const LABEL_BUTTON_SIGN_IN: string = 'Iniciar sesión'
 
+export const TEXT_WELCOME: string = '¡Bienvenido ${Username}!'
+export const LABEL_BUTTON_PROFILE: string = 'Perfil'
+export const LABEL_BUTTON_SIGN_OUT: string = 'Cerrar sesión'
+
 export const TEXT_ERROR: string = '¡Error!'
 export const TEXT_ERROR_USER_SIGN_IN: string = 'Usuario o contraseña incorrectos'
 export const TEXT_ERROR_TRY_AGAIN: string = 'Inténtalo de nuevo'

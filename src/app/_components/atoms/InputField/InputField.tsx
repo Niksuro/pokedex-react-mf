@@ -1,8 +1,8 @@
+import Icon from '../Icon/Icon'
 import {
   ContainerInputField,
   ErrorMessage,
   Form,
-  Icon,
   Label,
 } from './InputField.styles'
 
@@ -30,12 +30,12 @@ const InputField = ({
   value,
   onChange,
   onClickRightIcon,
-}: InputFieldProps) => {  
+}: InputFieldProps) => {
   return (
     <>
       <Label data-test={'label-form'}>{label}</Label>
       <ContainerInputField>
-        {leftIcon && <Icon $icon={leftIcon} />}
+        {leftIcon && <Icon icon={leftIcon} />}
         <Form
           placeholder={placeholder}
           type={type}
@@ -46,8 +46,8 @@ const InputField = ({
         />
         {rightIcon && (
           <Icon
-            $icon={rightIcon}
-            $clickeable={onClickRightIcon ? true : false}
+            icon={rightIcon}
+            clickeable={onClickRightIcon ? true : false}
             onClick={onClickRightIcon}
           />
         )}
