@@ -11,9 +11,6 @@ export default async function middleware(request: NextRequest) {
   if (expirationDate < Date.now()) {
     return NextResponse.redirect(new URL('/', request.url))
   }
-  console.log('session:::', session);
-  console.log('session:token:::', session?.user?.token);
-  
   if (!session?.user?.token) {
     return NextResponse.redirect(new URL('/', request.url))
   }

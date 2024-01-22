@@ -25,20 +25,26 @@ const handler = NextAuth({
         if(user.password !== credentials?.password) {
             return null
         }
-        return user
+        const parsedUser: any = {
+          name: user.name,
+          email: user.email,
+          profileImage: user.profileImage,
+          token: user.token,
+        }        
+        return parsedUser
       },
     }),
   ],
   callbacks: {
     jwt: async ({ token, user, trigger, session }: any) => {
       user && (token.user = user)
-      if (trigger === 'update' && session?.name) {
-        token.token = user.token
+      if (trigger === 'update' && session?.name) {      
+        token.user = user
       }
       return token
     },
     session: async ({ session, token }: any) => {
-      session.token = token.token
+      session.user = token.user
       return session
     },
   },

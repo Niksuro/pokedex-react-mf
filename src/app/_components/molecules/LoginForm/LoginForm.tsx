@@ -61,7 +61,7 @@ const LoginForm = () => {
     try {
       setLoading(true)
       const res = await signIn('credentials', {
-        email: formik.values.email,
+        email: formik.values.email.toLowerCase(),
         password: formik.values.password,
         redirect: false,
       })

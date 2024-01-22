@@ -1,7 +1,5 @@
+import DashboardContainer from '@/app/_components/organisms/DashboardContainer/DashboardContainer'
+
 export default function Dashboard() {
-  return (
-    <div>
-        <h1>dashboard works!</h1>
-    </div>
-  )
+  return <DashboardContainer />
 }
