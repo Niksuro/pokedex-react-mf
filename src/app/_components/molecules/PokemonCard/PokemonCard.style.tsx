@@ -49,13 +49,13 @@ export const TagWeight = styled.p(() => [
 ])
 
 export const PokemonName = styled.h3(() => [
-    tw`text-3xl lg:text-5xl font-bold uppercase`,
+    tw`text-xl lg:text-4xl font-bold uppercase`,
 ])
 
 export const ContainerPokemonMoves = styled.div(() => [
-    tw`grid grid-cols-3 absolute bottom-4 lg:bottom-8 gap-[1px] w-[90%] h-auto`,
+    tw`grid grid-cols-3 absolute bottom-4 gap-[1px] w-[90%] h-auto`,
 ])
 
 export const PokemonMoves = styled.p(() => [
-    tw`text-sm lg:text-xl font-light`,
+    tw`text-xs lg:text-lg font-light`,
 ])

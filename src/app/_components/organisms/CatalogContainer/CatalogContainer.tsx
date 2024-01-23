@@ -16,6 +16,7 @@ import {
 import axios from 'axios'
 import { PokeApiAll } from '@/app/_interfaces/PokeApiAll'
 import Paginator from '../../molecules/Paginator/Paginator'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 const CatalogContainer = () => {
   /**
@@ -38,6 +39,24 @@ const CatalogContainer = () => {
    * Constant that store the number of pokemon per page
    */
   const perPage = 10
+
+  /**
+   * Hooks to get the router and the params of the url
+   */
+  const router = useRouter()
+  const params = useSearchParams()
+  const pathname = usePathname()
+
+  /**
+   * Effect that get the page of the url if exists
+   */
+  useEffect(() => {
+    if (params.get('page') !== null) {
+      const page = parseInt(params.get('page') || '1')
+      setPage(page)
+    }
+  }, [])
+
   /**
    * Effect that get the list of the pokemon
    */
@@ -67,6 +86,15 @@ const CatalogContainer = () => {
    */
   const openDetailedCard = (data: PokemonShortData) => {
     setDetail(data)
+  }
+  /**
+   * Function that update the page of the paginator
+   * and update the url
+   * @param page - number of the page to update
+   */
+  const updatePage = (page: number) => {
+    router.push(`${pathname}?page=${page}`)
+    setPage(page)
   }
   return (
     <>
@@ -102,7 +130,7 @@ const CatalogContainer = () => {
           page={page}
           perPage={perPage}
           totalResults={totalResults}
-          setActualPage={(page) => setPage(page)}
+          setActualPage={(page) => updatePage(page)}
         />
       )}
       {detail && (
