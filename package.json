@@ -1,6 +1,6 @@
 {
   "name": "pokedex-react-mf",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "babelMacros": {
     "twin": {
@@ -8,7 +8,10 @@
     }
   },
   "nyc": {
-    "include": ["src/app/_components/**/*.+(tsx|ts)", "src/app/(routes)/**/*.+(tsx|ts)"],
+    "include": [
+      "src/app/_components/**/*.+(tsx|ts)",
+      "src/app/(routes)/**/*.+(tsx|ts)"
+    ],
     "excludeAfterRemap": true
   },
   "scripts": {

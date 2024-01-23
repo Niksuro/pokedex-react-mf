@@ -15,14 +15,44 @@ import {
 } from './UserMenu.style'
 import { signOut } from 'next-auth/react'
 import { UserData } from '@/app/_interfaces/UserData'
+import { useEffect, useRef } from 'react'
 
 interface UserMenuProps {
   user?: UserData
+  outClick: () => void
 }
 
-const UserMenu = ({ user }: UserMenuProps) => {
+const UserMenu = ({ user, outClick }: UserMenuProps) => {
+  /**
+   * Ref that contains the container of the user menu
+   */
+  const container = useRef<HTMLDivElement>(null)
+  /**
+   * UseEffect that helps to close the user menu when the user clicks outside the menu
+   */
+  useEffect(() => {
+    const handleOutSideClick = (event: MouseEvent) => {
+      try {
+        if (
+          container.current &&
+          !container.current.contains(event.target as Node)
+        ) {
+          outClick()
+        }
+      } catch (error) {
+        console.log('Error: ', error)
+      }
+    }
+
+    window.addEventListener('mousedown', handleOutSideClick)
+
+    return () => {
+      window.removeEventListener('mousedown', handleOutSideClick)
+    }
+  }, [container])
+
   return (
-    <Container>
+    <Container ref={container}>
       <ContainerUserData>
         <UserName>
           {TEXT_WELCOME.replace('${Username}', user?.name ?? '')}
