@@ -1,6 +1,6 @@
 {
   "name": "pokedex-react-mf",
-  "version": "0.12.2",
+  "version": "1.0.0",
   "private": true,
   "babelMacros": {
     "twin": {
