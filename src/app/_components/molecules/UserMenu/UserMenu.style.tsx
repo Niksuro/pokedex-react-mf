@@ -1,7 +1,7 @@
 import tw, { styled } from 'twin.macro'
 
 export const Container = styled.div(() => [
-  tw`absolute flex flex-col right-2 top-16 p-4 w-[300px] text-lg h-auto text-terciary rounded-xl bg-primary shadow-lg justify-center border border-secondary`,
+  tw`absolute flex flex-col right-2 top-0 p-4 w-[300px] text-lg h-auto text-terciary rounded-xl bg-primary shadow-lg justify-center border border-secondary`,
 ])
 
 export const ContainerUserData = styled.div(() => [
