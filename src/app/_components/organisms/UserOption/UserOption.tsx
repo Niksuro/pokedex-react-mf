@@ -34,11 +34,12 @@ const UserOption = () => {
           alt="profile"
           width={50}
           height={50}
+          data-test="profile-image"
           onClick={() => setVisible(!visible)}
         />
       )}
       {!user?.profileImage && (
-        <Container>
+        <Container data-test="profile-image">
           <Icon
             icon={ICON_USER}
             clickeable={true}

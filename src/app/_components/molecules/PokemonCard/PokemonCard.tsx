@@ -47,7 +47,10 @@ const PokemonCard = ({ key, data }: PokemonCardProps) => {
             data.moves
               .slice(0, 4)
               .map((move, index) => (
-                <PokemonMoves key={`move-${index}`}>{`#${move}`}</PokemonMoves>
+                <PokemonMoves
+                  key={`move-${index}`}
+                  data-test="moves"
+                >{`#${move}`}</PokemonMoves>
               ))}
           {data.moves.length === 0 && <PokemonMoves>{`No moves`}</PokemonMoves>}
         </ContainerPokemonMoves>

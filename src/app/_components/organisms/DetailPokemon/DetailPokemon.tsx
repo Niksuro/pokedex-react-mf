@@ -41,7 +41,7 @@ const DetailPokemon = ({ data, onClickOutside }: DetailPokemonProps) => {
         <Container>
           <PokemonCard data={pokemon} />
           <Background onClick={onClickOutside} />
-          <ContainerClose>
+          <ContainerClose data-test="bg-detail">
             <Icon icon={ICON_CLOSE} clickeable onClick={onClickOutside} />
           </ContainerClose>
         </Container>

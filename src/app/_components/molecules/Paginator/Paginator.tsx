@@ -1,7 +1,4 @@
-import {
-  ICON_LEFT,
-  ICON_RIGHT,
-} from '@/app/_constants/constants'
+import { ICON_LEFT, ICON_RIGHT } from '@/app/_constants/constants'
 import Icon from '../../atoms/Icon/Icon'
 import {
   ButtonActionPaginator,
@@ -61,7 +58,7 @@ const Paginator = ({
   /**
    * Hook to set the pages to show when the page in parent change
    */
-  useEffect(() => {    
+  useEffect(() => {
     setPagesArray()
   }, [page])
 
@@ -88,6 +85,7 @@ const Paginator = ({
       {pages.map((pageItem, index) => (
         <ButtonPaginator
           key={`page-${index}`}
+          data-test="paginator-page"
           $selected={pageItem === page}
           onClick={() => setActualPage(pageItem)}
         >

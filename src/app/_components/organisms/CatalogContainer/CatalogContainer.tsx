@@ -62,7 +62,7 @@ const CatalogContainer = () => {
    */
   useEffect(() => {
     const getPokemonList = async () => {
-      setPokemonList([])
+      setPokemonList([])      
       await axios
         .get(
           process.env.NEXT_PUBLIC_BACKEND_URL +

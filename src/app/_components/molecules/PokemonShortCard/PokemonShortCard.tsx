@@ -9,13 +9,15 @@ interface PokemonShortCardProps {
   onClick?: () => void
 }
 
-const PokemonShortCard = ({ cardKey, data, onClick }: PokemonShortCardProps) => {
+const PokemonShortCard = ({
+  cardKey,
+  data,
+  onClick,
+}: PokemonShortCardProps) => {
   return (
     <ContainerShortCard key={cardKey} onClick={onClick}>
-      <Title>{data.name}</Title>
-      <Icon
-        icon={ICON_RIGHT}
-      />
+      <Title data-test="short-card-title">{data.name}</Title>
+      <Icon icon={ICON_RIGHT} />
     </ContainerShortCard>
   )
 }
