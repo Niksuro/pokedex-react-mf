@@ -9,7 +9,7 @@ export const Subtitle = styled.h2(() => [
 ])
 
 export const Skeleton = styled.div(() => [
-  tw`animate-pulse bg-white w-full h-16 rounded-xl`,
+  tw`animate-pulse bg-secondary w-full h-16 rounded-xl`,
 ])
 
 export const ContainerCards = styled.div(() => [

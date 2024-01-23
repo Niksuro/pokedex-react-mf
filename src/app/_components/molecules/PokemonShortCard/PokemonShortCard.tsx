@@ -4,14 +4,14 @@ import Icon from '../../atoms/Icon/Icon'
 import { ICON_RIGHT } from '@/app/_constants/constants'
 
 interface PokemonShortCardProps {
-  key?: string
+  cardKey?: string
   data: PokemonShortData
   onClick?: () => void
 }
 
-const PokemonShortCard = ({ key, data, onClick }: PokemonShortCardProps) => {
+const PokemonShortCard = ({ cardKey, data, onClick }: PokemonShortCardProps) => {
   return (
-    <ContainerShortCard key={key} onClick={onClick}>
+    <ContainerShortCard key={cardKey} onClick={onClick}>
       <Title>{data.name}</Title>
       <Icon
         icon={ICON_RIGHT}

@@ -10,6 +10,8 @@ export const ICON_SEARCH: string = '\\e905'
 export const ICON_USER: string = '\\e906'
 export const ICON_RIGHT: string = '\\e907'
 export const ICON_CLOSE: string = '\\e908'
+export const ICON_DOUBLE_LEFT: string = '\\e909'
+export const ICON_DOUBLE_RIGHT: string = '\\e90a'
 
 export const TEXT_SIGN_IN_TITLE: string = '¡Bienvenido!'
 export const TEXT_SIGN_IN_SUBTITLE: string = 'Ingresa tus datos para continuar'
