@@ -6,5 +6,5 @@ export const Container = styled.div(() => [
 ])
 
 export const ImageContainer = styled(Image)(() => [
-  tw`relative w-[50px] h-[50px] rounded-3xl border-2 border-primary cursor-pointer`,
+  tw`relative w-[50px] h-[50px] rounded-3xl border-2 border-secondary cursor-pointer`,
 ])

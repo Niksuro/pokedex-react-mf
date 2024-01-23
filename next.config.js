@@ -9,7 +9,7 @@ module.exports = withTwin({
   //   ]
   // },
   images: {
-    domains: ['www.freeiconspng.com', 'raw.githubusercontent.com'],
+    domains: ['i.pinimg.com', 'www.freeiconspng.com', 'raw.githubusercontent.com'],
     disableStaticImages: true
   },
 })

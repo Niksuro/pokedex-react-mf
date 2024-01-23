@@ -9,5 +9,5 @@ export const Subtitle = styled.h2(() => [
 ])
 
 export const Container = styled.div(() => [
-  tw`flex flex-col h-auto w-[400px] max-md:h-[80%] max-md:w-[80%] bg-white rounded-xl shadow-xl p-8`,
+  tw`flex flex-col h-auto w-[400px] max-md:h-[80%] max-md:w-[80%] bg-primary text-terciary rounded-xl shadow-xl p-8`,
 ])
