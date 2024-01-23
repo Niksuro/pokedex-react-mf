@@ -8,6 +8,8 @@ export const ICON_PASSWORD: string = '\\e903'
 export const ICON_LOGOUT: string = '\\e904'
 export const ICON_SEARCH: string = '\\e905'
 export const ICON_USER: string = '\\e906'
+export const ICON_RIGHT: string = '\\e907'
+export const ICON_CLOSE: string = '\\e908'
 
 export const TEXT_SIGN_IN_TITLE: string = '¡Bienvenido!'
 export const TEXT_SIGN_IN_SUBTITLE: string = 'Ingresa tus datos para continuar'
@@ -22,8 +24,12 @@ export const TEXT_WELCOME: string = '¡Bienvenido ${Username}!'
 export const LABEL_BUTTON_PROFILE: string = 'Perfil'
 export const LABEL_BUTTON_SIGN_OUT: string = 'Cerrar sesión'
 
+export const TEXT_TITLE_DASHBOARD: string = 'Bienvenido a la Pokédex - NSR'
+export const TEXT_SUBTITLE_DASHBOARD: string = 'Selecciona un Pokémon para ver sus detalles.'
+
+export const TEXT_WEIGHT_CARD: string = 'Peso: ${weight} libras'
+
 export const TEXT_ERROR: string = '¡Error!'
-export const TEXT_ERROR_USER_SIGN_IN: string = 'Usuario o contraseña incorrectos'
+export const TEXT_ERROR_USER_SIGN_IN: string = 'Correo o contraseña incorrectos'
 export const TEXT_ERROR_TRY_AGAIN: string = 'Inténtalo de nuevo'
 export const TEXT_ERROR_USER_UNEXPECTED: string = 'Ha ocurrido un error'
-

@@ -46,7 +46,7 @@ const UserOption = () => {
           />
         </Container>
       )}
-      {visible && <UserMenu user={user} />}
+      {visible && <UserMenu user={user} outClick={() => setVisible(false)} />}
     </>
   )
 }

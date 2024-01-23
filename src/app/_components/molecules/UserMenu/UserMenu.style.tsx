@@ -1,11 +1,11 @@
 import tw, { styled } from 'twin.macro'
 
 export const Container = styled.div(() => [
-  tw`absolute flex flex-col right-2 top-16 p-4 w-[300px] text-lg h-auto rounded-xl bg-white shadow-lg flex justify-center border border-primary`,
+  tw`absolute flex flex-col right-2 top-16 p-4 w-[300px] text-lg h-auto text-terciary rounded-xl bg-primary shadow-lg justify-center border border-secondary`,
 ])
 
 export const ContainerUserData = styled.div(() => [
-  tw`flex flex-col items-center justify-center border-b-[1px] border-primary pb-2 mb-4 w-full`,
+  tw`flex flex-col items-center justify-center border-b-[1px] border-secondary pb-2 mb-4 w-full`,
 ])
 
 export const UserName = styled.p(() => [
