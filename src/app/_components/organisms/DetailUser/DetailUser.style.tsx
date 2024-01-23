@@ -6,7 +6,7 @@ interface DetailUserProps {
 }
 
 export const DetailUserContainer = styled.div<DetailUserProps>(({ $show }) => [
-  tw`bg-white w-[500px] h-[400px] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg p-4 z-30 flex flex-col justify-center items-center`,
+  tw`bg-white w-[90%] lg:w-[500px] h-[400px] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg p-4 z-30 flex flex-col justify-center items-center`,
   tw`opacity-0 scale-0 transition-all`,
   $show === true && tw`opacity-100 scale-100`,
 ])

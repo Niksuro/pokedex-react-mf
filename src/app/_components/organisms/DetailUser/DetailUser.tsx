@@ -18,6 +18,7 @@ import {
   TEXT_USERNAME_USER,
 } from '@/app/_constants/constants'
 import { Background } from '../DetailPokemon/DetailPokemon.style'
+import Spinner from '../../atoms/Spinner/Spinner'
 
 interface DetailUserProps {
   onClickClose: () => void
@@ -45,33 +46,38 @@ const DetailUser = ({ onClickClose }: DetailUserProps) => {
   }, [])
   return (
     <>
-      <Background onClick={() => onClickClose()} />
-      <DetailUserContainer $show={show}>
-        {user?.profileImage && (
-          <DetailUserImageContainer
-            src={user?.profileImage}
-            alt="profile"
-            width={150}
-            height={150}
-          />
-        )}
-        {!user?.profileImage && (
-          <DetailUserContainerImage data-test="profile-image">
-            <Icon icon={ICON_USER} clickeable={false} />
-          </DetailUserContainerImage>
-        )}
-        <DetailUserLabel>{TEXT_USERNAME_USER}</DetailUserLabel>
-        <DetailUserName>{user?.name}</DetailUserName>
-        <DetailUserLabel>{TEXT_EMAIL_USER}</DetailUserLabel>
-        <DetailUserEmail>{user?.email}</DetailUserEmail>
-        <DetailUserClose>
-          <Icon
-            icon={ICON_CLOSE}
-            clickeable={true}
-            onClick={() => onClickClose()}
-          />
-        </DetailUserClose>
-      </DetailUserContainer>
+      {!show && <Spinner />}
+      {show && (
+        <>
+          <Background onClick={() => onClickClose()} />
+          <DetailUserContainer $show={show}>
+            {user?.profileImage && (
+              <DetailUserImageContainer
+                src={user?.profileImage}
+                alt="profile"
+                width={150}
+                height={150}
+              />
+            )}
+            {!user?.profileImage && (
+              <DetailUserContainerImage data-test="profile-image">
+                <Icon icon={ICON_USER} clickeable={false} />
+              </DetailUserContainerImage>
+            )}
+            <DetailUserLabel>{TEXT_USERNAME_USER}</DetailUserLabel>
+            <DetailUserName>{user?.name}</DetailUserName>
+            <DetailUserLabel>{TEXT_EMAIL_USER}</DetailUserLabel>
+            <DetailUserEmail>{user?.email}</DetailUserEmail>
+            <DetailUserClose>
+              <Icon
+                icon={ICON_CLOSE}
+                clickeable={true}
+                onClick={() => onClickClose()}
+              />
+            </DetailUserClose>
+          </DetailUserContainer>
+        </>
+      )}
     </>
   )
 }
