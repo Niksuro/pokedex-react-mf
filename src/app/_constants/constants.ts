@@ -31,6 +31,9 @@ export const TEXT_SUBTITLE_DASHBOARD: string = 'Selecciona un Pokémon para ver 
 
 export const TEXT_WEIGHT_CARD: string = 'Peso: ${weight} libras'
 
+export const TEXT_USERNAME_USER: string = 'Nombre de usuario'
+export const TEXT_EMAIL_USER: string = 'Correo electrónico'
+
 export const TEXT_ERROR: string = '¡Error!'
 export const TEXT_ERROR_USER_SIGN_IN: string = 'Correo o contraseña incorrectos'
 export const TEXT_ERROR_TRY_AGAIN: string = 'Inténtalo de nuevo'

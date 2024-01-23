@@ -6,12 +6,17 @@ import { useEffect, useState } from 'react'
 import UserMenu from '../../molecules/UserMenu/UserMenu'
 import { getSessionData } from '@/app/_helpers/getSessionData'
 import { UserData } from '@/app/_interfaces/UserData'
+import DetailUser from '../DetailUser/DetailUser'
 
 const UserOption = () => {
   /**
    * State that contains the visibility of the user menu
    */
   const [visible, setVisible] = useState(false)
+  /**
+   * State that contains the boolean to show or hide the user menu
+   */
+  const [showDetailUser, setShowDetailUser] = useState<boolean>(false)
   /**
    * State that contains the user data
    */
@@ -47,7 +52,19 @@ const UserOption = () => {
           />
         </Container>
       )}
-      {visible && <UserMenu user={user} outClick={() => setVisible(false)} />}
+      {visible && (
+        <UserMenu
+          user={user}
+          outClick={() => setVisible(false)}
+          onClickProfileOption={() => {
+            setShowDetailUser(true)
+            setVisible(false)
+          }}
+        />
+      )}
+      {showDetailUser && (
+        <DetailUser onClickClose={() => setShowDetailUser(false)} />
+      )}
     </>
   )
 }

@@ -15,18 +15,20 @@ import {
 } from './UserMenu.style'
 import { signOut } from 'next-auth/react'
 import { UserData } from '@/app/_interfaces/UserData'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface UserMenuProps {
   user?: UserData
   outClick: () => void
+  onClickProfileOption: (show: boolean) => void
 }
 
-const UserMenu = ({ user, outClick }: UserMenuProps) => {
+const UserMenu = ({ user, outClick, onClickProfileOption }: UserMenuProps) => {
   /**
    * Ref that contains the container of the user menu
    */
   const container = useRef<HTMLDivElement>(null)
+  
   /**
    * UseEffect that helps to close the user menu when the user clicks outside the menu
    */
@@ -52,20 +54,27 @@ const UserMenu = ({ user, outClick }: UserMenuProps) => {
   }, [container])
 
   return (
-    <Container ref={container}>
-      <ContainerUserData>
-        <UserName>
-          {TEXT_WELCOME.replace('${Username}', user?.name ?? '')}
-        </UserName>
-        <EmailText>{user?.email}</EmailText>
-      </ContainerUserData>
-      <IconOption icon={ICON_USER} option={LABEL_BUTTON_PROFILE} />
-      <IconOption
-        icon={ICON_LOGOUT}
-        option={LABEL_BUTTON_SIGN_OUT}
-        onClick={() => signOut()}
-      />
-    </Container>
+    <>
+      <Container ref={container}>
+        <ContainerUserData>
+          <UserName>
+            {TEXT_WELCOME.replace('${Username}', user?.name ?? '')}
+          </UserName>
+          <EmailText>{user?.email}</EmailText>
+        </ContainerUserData>
+        <IconOption
+          icon={ICON_USER}
+          option={LABEL_BUTTON_PROFILE}
+          onClick={() => {onClickProfileOption(true)}}
+        />
+        <IconOption
+          icon={ICON_LOGOUT}
+          option={LABEL_BUTTON_SIGN_OUT}
+          onClick={() => signOut()}
+        />
+      </Container>
+      
+    </>
   )
 }
 
