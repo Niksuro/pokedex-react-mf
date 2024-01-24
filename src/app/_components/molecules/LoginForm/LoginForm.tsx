@@ -20,11 +20,14 @@ import {
   TEXT_ERROR_TRY_AGAIN,
   TEXT_ERROR_USER_SIGN_IN,
   TEXT_ERROR_USER_UNEXPECTED,
+  TEXT_SUCCESS,
+  TEXT_SUCCESS_USER_SIGN_IN,
 } from '@/app/_constants/constants'
 import Spinner from '../../atoms/Spinner/Spinner'
 import { useRouter } from 'next/navigation'
-import { openModalError } from '@/app/_helpers/openModal'
+import { openModalError, openModalSuccess } from '@/app/_helpers/openModal'
 import ModalError from '@/app/_interfaces/ModalError'
+import ModalSuccess from '@/app/_interfaces/ModalSuccess'
 
 const LoginForm = () => {
   /**
@@ -75,6 +78,11 @@ const LoginForm = () => {
         openModalError(errorModalData)
         return
       }
+      const successModalData: ModalSuccess = {
+        title: TEXT_SUCCESS,
+        text: TEXT_SUCCESS_USER_SIGN_IN,
+      }
+      openModalSuccess(successModalData)
       router.push('/dashboard')
     } catch (error: any) {
       const errorModalData: ModalError = {

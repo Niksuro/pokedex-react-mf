@@ -21,7 +21,7 @@ export const ButtonPaginator = styled.button<ButtonPaginatorProps>(
 
 export const ButtonActionPaginator = styled.button<ButtonActionPaginatorProps>(
   ({ $side }) => [
-    tw`bg-transparent font-bold p-2`,
+    tw`bg-transparent font-bold p-2 text-2xl md:text-5xl`,
     $side === 'left' && tw`absolute left-0`,
     $side === 'right' && tw`absolute right-0`,
   ]
