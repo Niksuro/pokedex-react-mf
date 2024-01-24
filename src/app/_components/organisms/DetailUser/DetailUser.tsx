@@ -30,9 +30,13 @@ const DetailUser = ({ onClickClose }: DetailUserProps) => {
    */
   const [user, setUser] = useState<UserData>()
   /**
-   * State that helps to initiate the animation of the card
+   * State that change the loader until the user data is loaded from cookie
    */
   const [show, setShow] = useState<boolean>(false)
+  /**
+   * State that helps to initiate the animation of the card
+   */
+  const [animation, setAnimation] = useState<boolean>(false)
   /**
    * UseEffect that load the user data on the first render
    */
@@ -41,6 +45,9 @@ const DetailUser = ({ onClickClose }: DetailUserProps) => {
       .then((data: UserData) => {
         setUser(data)
         setShow(true)
+        setTimeout(() => {
+          setAnimation(true)
+        }, 100)
       })
       .catch((error) => {})
   }, [])
@@ -50,7 +57,7 @@ const DetailUser = ({ onClickClose }: DetailUserProps) => {
       {show && (
         <>
           <Background onClick={() => onClickClose()} />
-          <DetailUserContainer $show={show}>
+          <DetailUserContainer $show={animation}>
             {user?.profileImage && (
               <DetailUserImageContainer
                 src={user?.profileImage}
