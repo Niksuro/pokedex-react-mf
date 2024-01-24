@@ -35,7 +35,7 @@ const PokemonCard = ({ key, data }: PokemonCardProps) => {
         height={500}
       />
       <ImageCard
-        src={data.sprite}
+        src={data.sprite ?? '/images/MissingNo.png'}
         alt={`sprite-${data.name}`}
         width={500}
         height={500}
@@ -47,8 +47,12 @@ const PokemonCard = ({ key, data }: PokemonCardProps) => {
             data.moves
               .slice(0, 4)
               .map((move, index) => (
-                <PokemonMoves key={`move-${index}`}>{`#${move}`}</PokemonMoves>
+                <PokemonMoves
+                  key={`move-${index}`}
+                  data-test="moves"
+                >{`#${move}`}</PokemonMoves>
               ))}
+          {data.moves.length === 0 && <PokemonMoves>{`No moves`}</PokemonMoves>}
         </ContainerPokemonMoves>
       </DescriptionContainer>
       <TagWeight>

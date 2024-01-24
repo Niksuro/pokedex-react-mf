@@ -10,6 +10,8 @@ export const ICON_SEARCH: string = '\\e905'
 export const ICON_USER: string = '\\e906'
 export const ICON_RIGHT: string = '\\e907'
 export const ICON_CLOSE: string = '\\e908'
+export const ICON_DOUBLE_LEFT: string = '\\e909'
+export const ICON_DOUBLE_RIGHT: string = '\\e90a'
 
 export const TEXT_SIGN_IN_TITLE: string = '¡Bienvenido!'
 export const TEXT_SIGN_IN_SUBTITLE: string = 'Ingresa tus datos para continuar'
@@ -28,6 +30,9 @@ export const TEXT_TITLE_DASHBOARD: string = 'Bienvenido a la Pokédex - NSR'
 export const TEXT_SUBTITLE_DASHBOARD: string = 'Selecciona un Pokémon para ver sus detalles.'
 
 export const TEXT_WEIGHT_CARD: string = 'Peso: ${weight} libras'
+
+export const TEXT_USERNAME_USER: string = 'Nombre de usuario'
+export const TEXT_EMAIL_USER: string = 'Correo electrónico'
 
 export const TEXT_ERROR: string = '¡Error!'
 export const TEXT_ERROR_USER_SIGN_IN: string = 'Correo o contraseña incorrectos'

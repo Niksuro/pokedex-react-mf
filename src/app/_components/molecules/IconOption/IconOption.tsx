@@ -9,7 +9,7 @@ interface IconOptionProps {
 
 const IconOption = ({ icon, option, onClick }: IconOptionProps) => {
   return (
-    <Container onClick={onClick} $clickeable={onClick ? true : false}>
+    <Container data-test="icon-option" onClick={onClick} $clickeable={onClick ? true : false}>
       <Icon icon={icon} />
       <Text>{option}</Text>
     </Container>
